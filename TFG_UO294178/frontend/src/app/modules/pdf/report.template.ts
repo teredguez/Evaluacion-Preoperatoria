@@ -16,7 +16,7 @@ export function buildReport(data: any): any {
     styles: reportStyles,
 
     content: [
-      // --- CABECERA ---
+      // CABECERA 
       {
         text: 'Informe Preoperatorio - Comité Perioperatorio',
         style: 'header',
@@ -278,8 +278,7 @@ export function buildReport(data: any): any {
         layout: gridLayout,
         margin: reportMargins.blockAfter,
       },
-
-      // OTRAS PRUEBAS
+      
       { text: 'Otras Exploraciones:', style: 'sectionHeader', margin: [0, 0, 0, 6] },
       {
         table: {
@@ -335,7 +334,7 @@ export function buildReport(data: any): any {
 
       // FIRMA
       {
-        text: '\n\nEL PACIENTE ENTIENDE, FIRMA y CONSIENTE..',
+        text: '\n\nEL PACIENTE ENTIENDE, ACEPTA Y FIRMA CONSENTIMIENTOS',
         alignment: 'center',
         italics: true,
         color: reportTheme.colors.muted,

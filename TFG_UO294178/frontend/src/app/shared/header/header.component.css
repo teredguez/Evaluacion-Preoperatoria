@@ -56,9 +56,9 @@
 .avatar-circle {
   width: 36px;
   height: 36px;
-  background-color: white; /* Fondo blanco */
-  color: #005eb8; /* Letra azul */
-  border-radius: 50%; /* Círculo perfecto */
+  background-color: white; 
+  color: #005eb8; 
+  border-radius: 50%; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,6 @@
   transition: transform 0.2s;
 }
 
-/* Estilo especial si es Admin */
 .admin-avatar {
   background-color: #ffd700;
   color: #000;

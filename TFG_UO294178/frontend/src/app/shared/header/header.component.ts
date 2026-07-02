@@ -34,11 +34,9 @@ export class HeaderComponent {
     this.authService.logout();
   }
 
-  // Obtener la inicial del usuario o 'A' si es admin
   getInitial(user: AppUser): string {
     if (user.role === 'admin') return 'A';
 
-    // Primera letra del nombre.
     const name = user.displayName ;
     return name.charAt(0).toUpperCase();
   }

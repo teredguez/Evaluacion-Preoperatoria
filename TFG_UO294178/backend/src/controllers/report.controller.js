@@ -94,7 +94,6 @@ async function viewReport(req, res, next) {
 }
 
 async function deleteReport(req, res, next) {
-  console.log("DELETE REPORT");
   console.log("ID:", req.params.id);
   try {
     const reportId = req.params.id;
@@ -238,54 +237,6 @@ async function getDraftById(req, res, next) {
   } catch (error) {
     next(error);
   }
-}
-
-async function completeDraft({
-  draftId,
-  userId,
-  patientCode,
-  diagnosis,
-  surgery,
-  decision,
-  listDate,
-  pdfFilename,
-  pdfPath,
-  formData,
-}) {
-  const query = `
-    UPDATE reports
-    SET
-      patient_code = $1,
-      diagnosis = $2,
-      surgery = $3,
-      decision = $4,
-      list_date = $5,
-      pdf_filename = $6,
-      pdf_path = $7,
-      form_data = $8,
-      status = 'completed',
-      updated_at = CURRENT_TIMESTAMP
-    WHERE id = $9
-      AND user_id = $10
-      AND status = 'draft'
-    RETURNING *
-  `;
-
-  const values = [
-    patientCode,
-    diagnosis,
-    surgery,
-    decision,
-    listDate || null,
-    pdfFilename,
-    pdfPath,
-    formData,
-    draftId,
-    userId,
-  ];
-
-  const result = await db.query(query, values);
-  return result.rows[0] || null;
 }
 
 async function completeDraft(req, res, next) {

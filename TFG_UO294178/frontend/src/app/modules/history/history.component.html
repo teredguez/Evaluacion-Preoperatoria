@@ -37,19 +37,21 @@
               </mat-card-subtitle>
 
               <p class="description">
-  <strong>Diagnóstico:</strong>
-  {{ report.diagnosis?.length > 40
-      ? (report.diagnosis | slice:0:40) + '...'
-      : report.diagnosis || '—' }}
-  <br>
+                <strong>Diagnóstico:</strong>
+                {{
+                  report.diagnosis?.length > 40
+                    ? (report.diagnosis | slice: 0 : 40) + '...'
+                    : report.diagnosis || '—'
+                }}
+                <br />
 
-  <strong>Cirugía:</strong>
-  {{ report.surgery || '—' }}
-  <br>
+                <strong>Cirugía:</strong>
+                {{ report.surgery || '—' }}
+                <br />
 
-  <strong>Decisión:</strong>
-  {{ report.decision || '—' }}
-</p>
+                <strong>Decisión:</strong>
+                {{ report.decision || '—' }}
+              </p>
 
               <div class="report-actions">
                 <button mat-stroked-button color="primary" (click)="viewReport(report.id)">

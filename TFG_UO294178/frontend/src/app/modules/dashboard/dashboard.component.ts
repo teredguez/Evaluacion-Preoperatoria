@@ -34,49 +34,43 @@ export class DashboardComponent implements OnInit {
   asaDistribution: any = null;
 
   ngOnInit(): void {
-  this.reportsService.getProfileActivity().subscribe({
-    next: (res) => {
+    this.reportsService.getProfileActivity().subscribe({
+      next: (res) => {
+        const lastReport = res.recentReports?.[0];
 
-      const lastReport = res.recentReports?.[0];
+        if (lastReport?.form_data?.cardiacRisk) {
+          this.lastPrediction = lastReport.form_data.cardiacRisk;
+        }
+        this.asaDistribution = res.asaDistribution;
+      },
+      error: (err) => {
+        console.error(err);
+      },
+    });
 
-      if (lastReport?.form_data?.cardiacRisk) {
-        this.lastPrediction = lastReport.form_data.cardiacRisk;
-      }
-      this.asaDistribution = res.asaDistribution;
+    this.reportsService.getDrafts().subscribe({
+      next: (drafts) => {
+        this.draftsCount = drafts.length;
 
-    },
-    error: (err) => {
-      console.error(err);
-    }
-  });
-
-  this.reportsService.getDrafts().subscribe({
-  next: (drafts) => {
-
-    this.draftsCount = drafts.length;
-
-    if (drafts.length > 0) {
-      this.lastDraft = drafts[0];
-    }
-
+        if (drafts.length > 0) {
+          this.lastDraft = drafts[0];
+        }
+      },
+    });
   }
-});
-}
 
-getAsaPercentage(value: number): number {
-  if (!this.asaDistribution) return 0;
+  getAsaPercentage(value: number): number {
+    if (!this.asaDistribution) return 0;
 
-  const total =
-    this.asaDistribution.I +
-    this.asaDistribution.II +
-    this.asaDistribution.III +
-    this.asaDistribution.IV +
-    this.asaDistribution.V;
+    const total =
+      this.asaDistribution.I +
+      this.asaDistribution.II +
+      this.asaDistribution.III +
+      this.asaDistribution.IV +
+      this.asaDistribution.V;
 
-  return total > 0 ? (value / total) * 100 : 0;
-}
-
-  // Opciones del menú principal
+    return total > 0 ? (value / total) * 100 : 0;
+  }
   menuItems = [
     {
       title: 'Nueva Evaluación',

@@ -4,7 +4,6 @@
   min-height: calc(100vh - 64px);
 }
 
-/* ── Header ── */
 .profile-header {
   background: white;
   border-radius: 16px;
@@ -53,7 +52,6 @@
   font-weight: 500;
 }
 
-/* ── Stats ── */
 .stats-grid {
   max-width: 1100px;
   margin: 0 auto 2rem;
@@ -63,8 +61,8 @@
 }
 
 .stat-card {
-  display: flex !important;        /* ← imprescindible, sobreescribe mat-card */
-  flex-direction: row !important;  /* ← horizontal, no vertical */
+  display: flex !important;        
+  flex-direction: row !important;  
   align-items: center !important;
   gap: 1rem;
   padding: 1.25rem 1.5rem !important;
@@ -82,7 +80,7 @@
 .stat-icon {
   width: 44px;
   height: 44px;
-  min-width: 44px;        /* ← evita que se encoja */
+  min-width: 44px;        
   border-radius: 10px;
   background: #e0f2fe;
   display: flex;
@@ -111,7 +109,6 @@
   color: #64748b;
 }
 
-/* ── Activity ── */
 .activity-card {
   max-width: 1100px;
   margin: 0 auto;
@@ -181,7 +178,6 @@
   color: #64748b;
 }
 
-/* Decision pills en actividad */
 .decision-pill {
   display: inline-block;
   font-size: 0.68rem;

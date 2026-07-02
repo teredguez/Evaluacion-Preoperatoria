@@ -9,7 +9,6 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-// Error handling
 pool.on('error', (err) => {
   console.error('Unexpected error', err);
   process.exit(-1);

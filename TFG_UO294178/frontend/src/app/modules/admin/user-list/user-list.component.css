@@ -172,7 +172,6 @@
 .active    { background: #dcfce7; color: #15803d; }
 .pending   { background: #fee2e2; color: #b91c1c; }
 
-/* ── Sección pendientes ── */
 .pending-section {
   margin-top: 2rem;
 }

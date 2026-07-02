@@ -4,8 +4,6 @@
   min-height: calc(100vh - 64px);
 }
 
-/* HEADER */
-
 .welcome-banner {
   margin-bottom: 3rem;
   padding-bottom: 1rem;
@@ -60,8 +58,6 @@
   height: 100%;
 }
 
-/* ICONOS */
-
 .icon-circle {
   width: 64px;
   height: 64px;
@@ -98,8 +94,6 @@
   box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
 }
 
-/* TEXTO TARJETAS */
-
 .text-content {
   flex-grow: 1;
 }
@@ -123,8 +117,6 @@ mat-card-subtitle {
   margin: 0;
   line-height: 1.4;
 }
-
-/* DASHBOARD INFERIOR */
 
 .dashboard-widgets {
   margin-top: 2rem;
@@ -150,8 +142,6 @@ mat-card-subtitle {
   display: flex;
   flex-direction: column;
 }
-
-/* IA */
 
 .ai-banner-mini {
   display: flex;
@@ -212,8 +202,6 @@ mat-card-subtitle {
   font-size: 0.85rem;
 }
 
-/* BORRADORES */
-
 .pending-banner {
   display: flex;
   align-items: center;
@@ -273,8 +261,6 @@ mat-card-subtitle {
 .pending-banner button {
   white-space: nowrap;
 }
-
-/* ASA */
 
 .asa-card {
   background: white;

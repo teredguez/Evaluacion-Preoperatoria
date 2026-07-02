@@ -18,14 +18,10 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  // La dirección del servidor Node.js
   private API_URL = 'http://localhost:3000/api';
 
-  // --- GESTIÓN DEL ESTADO DEL USUARIO ---
-  // Es como una caja que guarda el último valor (el usuario actual) y se lo enseña a quien se suscriba.
   private currentUserSubject = new BehaviorSubject<AppUser | null>(null);
 
-  // Esta es la variable pública que escucharán tus Guards y Componentes
   public currentUserProfile$ = this.currentUserSubject.asObservable();
 
   constructor() {
@@ -42,15 +38,13 @@ export class AuthService {
       .post<any>(`${this.API_URL}/login`, { email, password }, { withCredentials: true })
       .pipe(
         tap((response) => {
-          // Si el login funciona, el backend nos devuelve el usuario
           if (response.user) {
             const user: AppUser = {
-              uid: response.user.id, // Adaptamos el ID numérico a 'uid'
+              uid: response.user.id, 
               email: response.user.email,
               role: response.user.role,
               displayName: response.user.name,
             };
-            // Guardamos el usuario en nuestra "caja" local
             this.currentUserSubject.next(user);
 
             if (user.role === 'admin') {

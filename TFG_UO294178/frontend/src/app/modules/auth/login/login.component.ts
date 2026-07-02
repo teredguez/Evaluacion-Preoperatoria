@@ -16,10 +16,8 @@ export class LoginComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  // Variable para mostrar errores en el HTML si el login falla
   errorMessage: string | null = null;
 
-  // Definimos el formulario con validaciones
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]]
@@ -32,15 +30,12 @@ export class LoginComponent {
 
     const { email, password } = this.loginForm.value;
 
-    // Llamamos al servicio (que a su vez llama al Backend Node.js)
     this.authService.login(email, password).subscribe({
       next: () => {
-        // Si todo va bien, el servicio redirige al dashboard
         console.log('Login correcto');
       },
       error: (err) => {
         console.error('Error en login:', err);
-        // Mostramos el mensaje de error que nos devuelve el backend (si existe)
         if (err.error && err.error.error) {
           this.errorMessage = err.error.error;
         } else {

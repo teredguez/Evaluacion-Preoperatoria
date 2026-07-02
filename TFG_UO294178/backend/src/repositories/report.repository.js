@@ -93,7 +93,6 @@ async function getRecentReportsByUser(userId) {
   return result.rows;
 }
 
-//Gestión de los borradores de los informes
 async function createDraft({
   userId,
   patientCode,
