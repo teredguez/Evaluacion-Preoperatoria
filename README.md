@@ -9,6 +9,35 @@ La aplicación ha sido desarrollada para apoyar el proceso de evaluación preope
 La solución se ha desarrollado siguiendo una arquitectura **cliente-servidor** y se encuentra completamente contenerizada mediante **Docker**.
 
 ---
+## Capturas de la aplicación
+### Dashboard principal
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4dff8671-ebe9-47d8-963c-7754a8a3430c" width="90%" />
+</p>
+
+### Formulario
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1807545a-03ca-4e00-ba10-b38b0ee089f3" width="90%" />
+</p>
+
+### Perfil del usuario
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f5fb9ed7-a87c-4963-9a14-2e4a6ccf5025" width="90%" />
+</p>
+
+### Extracto del informe generado
+
+<p align="center">
+  <img 
+    src="https://github.com/user-attachments/assets/783cdb5e-63ed-498d-8e7b-25217838ca23" 
+    width="75%" 
+    alt="Extracto del informe generado por la aplicación"
+  />
+</p>
+
 
 ## Tecnologías utilizadas
 
@@ -75,22 +104,17 @@ Una vez iniciado el sistema estarán disponibles los siguientes servicios:
 
 ## Configuración inicial
 
-La base de datos se inicializa automáticamente durante el despliegue mediante Docker. Para facilitar las pruebas del sistema, se crea un usuario administrador por defecto con las siguientes credenciales:
+La base de datos se inicializa automáticamente durante el despliegue mediante Docker.
 
-| Rol | Correo | Contraseña |
-|-----|---------|------------|
-| Administrador | `admin@sergas.es` | `admin1234` |
+Para facilitar la evaluación del proyecto, el sistema incluye un usuario administrador de prueba creado automáticamente durante la inicialización.
 
 Una vez iniciada la sesión, el administrador podrá:
 
-- Autorizar nuevos usuarios.
-- Gestionar los usuarios registrados.
-- Dar de baja usuarios existentes.
+Autorizar nuevos usuarios.
+Gestionar los usuarios registrados.
+Dar de baja usuarios existentes.
 
-Los nuevos usuarios autorizados deberán acceder a la opción **Activar mi cuenta** desde la pantalla de inicio para establecer su contraseña antes de poder iniciar sesión.
-
-> **Nota:** Estas credenciales se incluyen únicamente para facilitar la evaluación del proyecto y deberán modificarse o eliminarse en un entorno de producción.
-
+Los nuevos usuarios autorizados deberán acceder a la opción Activar mi cuenta desde la pantalla de inicio para establecer su contraseña antes de poder iniciar sesión.
 ---
 
 ## Detener la aplicación
@@ -128,6 +152,7 @@ El módulo de soporte a la decisión ha sido desarrollado mediante **Python** ut
 Los coeficientes obtenidos durante el entrenamiento se integran posteriormente en la aplicación web para realizar las predicciones de riesgo cardiovascular durante la evaluación preoperatoria.
 
 ---
+
 
 ## Autor
 
